@@ -1,0 +1,3 @@
+include ':IotSmartConfigSDK'
+include ':app'
+rootProject.name = "ISmartConfigOpenSDK"
