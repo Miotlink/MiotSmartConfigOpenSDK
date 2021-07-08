@@ -79,7 +79,7 @@ public class SocketManager implements IReceiver {
         try {
             byte[] bytes = VspBuildAndParseUtils.encrypt(bs);
             String msg = VspBuildAndParseUtils.getMlccContent(bytes, len);
-            LogLinkUtils.e("{address:"+ipAddress+",port:"+port+"}"+msg);
+            LogLinkUtils.i("{address:"+ipAddress+",port:"+port+"}"+msg);
             if (iSmartConfigOnReceiver == null) {
                 throw new Exception("not init interface ISmartListener");
             }

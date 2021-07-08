@@ -40,7 +40,7 @@ public final class SmartMulticast {
 			DatagramPacket sendDatagramPacket = new DatagramPacket(buffer, len,
 					address, port);
 			multicastSocket.send(sendDatagramPacket);
-			LogLinkUtils.e("<www.miotlink.com>......... ");
+			LogLinkUtils.i("<www.miotlink.com>......... ");
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 			return;

@@ -37,7 +37,7 @@ public class UdpSocket implements Runnable {
     }
     public boolean startRecv(int port, IReceiver lrs) {
         try {
-            LogLinkUtils.e("receiver port"+port);
+            LogLinkUtils.i("port:"+port);
             this.receiver = lrs;
             needStop = false;
             localPort = port;
