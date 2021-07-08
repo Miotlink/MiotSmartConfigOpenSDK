@@ -8,4 +8,6 @@ public interface ISmartConfigOnReceiver {
      * @param result 数据包
      */
     public void onSmartConnected(String ipAddress, int port, String result) throws Exception;
+
+
 }
