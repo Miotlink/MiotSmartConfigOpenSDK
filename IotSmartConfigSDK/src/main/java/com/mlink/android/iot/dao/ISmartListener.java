@@ -120,11 +120,9 @@ public class ISmartListener implements ISmart, ISmartConfigOnReceiver {
                 throw new Exception("iSmartListener is null");
             }
             Map<String, Object> device = deviceStore.getDevice(fcmacCode);
-
-
             if (device!=null){
                 if (!deviceStore.getDeviceMap().containsKey(fcmacCode+"fin")){
-                    iSmartListener.onSmartConfigListener(errorCode,errorMessage,JSON.toJSONString(IR.ok("success").put("data",device)));
+                    iSmartListener.onSmartConfigListener(JSON.toJSONString(IR.ok("success").put("data",device)));
                     deviceStore.addDevice(fcmacCode+"fin",device);
                 }
             }
@@ -141,6 +139,13 @@ public class ISmartListener implements ISmart, ISmartConfigOnReceiver {
             if (msg.what==10001){
                 errorCode=IotError.ERROR_3.getErrorCode();
                 errorMessage=IotError.ERROR_3.getErrorMessage();
+                try {
+                    if (iSmartListener!=null){
+                        iSmartListener.onSmartConfigListener(JSON.toJSONString(IR.error(errorCode,errorMessage)));
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     };
