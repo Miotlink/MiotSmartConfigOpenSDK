@@ -46,6 +46,7 @@ public class IotSmartConfigOpenSDK {
      */
     public void init(String appKey,Context mContext){
         this.mContext=mContext;
+        LogLinkUtils.i("v3.3.1");
     }
     private ISmartConfigListener iSmartConfigListener=null;
     public void setISmartConfigListener(ISmartConfigListener iSmartConfigListener){
@@ -92,6 +93,9 @@ public class IotSmartConfigOpenSDK {
      * @throws Exception
      */
     public void start(int mType,String routeName,String password,int timeOut)throws Exception{
+        LogLinkUtils.i("路由器账户:"+routeName);
+        LogLinkUtils.i("路由器密码:"+password);
+        LogLinkUtils.i("超时时间:"+timeOut+"秒");
         switch (mType){
             case 4:
                 if (iSmart==null){
