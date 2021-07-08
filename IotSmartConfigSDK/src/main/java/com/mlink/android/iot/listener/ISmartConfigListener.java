@@ -3,6 +3,5 @@ package com.mlink.android.iot.listener;
 import com.mlink.android.iot.bean.IDevice;
 
 public interface ISmartConfigListener {
-
-    public void onSmartConfigListener(int errorCode, String errorMessage, String data)throws Exception;
+    public void onSmartConfigListener(String data)throws Exception;
 }
